@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react';
 import { DndContext, DragOverlay, useSensor, useSensors, MouseSensor, TouchSensor } from '@dnd-kit/core';
 import { ComponentLibrary } from '@/components/builder/ComponentLibrary';
@@ -6,7 +8,7 @@ import { PropertyPanel } from '@/components/builder/PropertyPanel';
 import { Header } from '@/components/builder/Header';
 import { ComponentData } from '@/types/builder';
 
-const Index = () => {
+export default function Home() {
   const [components, setComponents] = useState<ComponentData[]>([]);
   const [selectedComponent, setSelectedComponent] = useState<ComponentData | null>(null);
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -108,6 +110,4 @@ const Index = () => {
       </div>
     </DndContext>
   );
-};
-
-export default Index;
+}
